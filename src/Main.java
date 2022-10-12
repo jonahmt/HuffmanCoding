@@ -11,11 +11,12 @@ public class Main {
      *
      * Possible commands:
      * "help"
-     * "command" "file name"
+     * "command" "file name" "flags"(optional)
      */
     public static void main(String[] args) {
         if (args.length == 0) {
             invalidInput(args);
+            System.exit(0);
         }
 
         // Switch on command
@@ -32,7 +33,7 @@ public class Main {
      * method creates an Encoder object which will handle the process.
      */
     private static void encode(String[] args) {
-
+        Encoder encoder = new Encoder(args[1]);
     }
 
     private static void invalidInput(String[] args) {
